@@ -32,4 +32,6 @@ protected:
 	void MoveForward(float InputValue);
 	void MoveRight(float InputValue);
 
+	void TurnCamera(float InputValue);
+	void LookUp(float InputValue);
 };
