@@ -7,8 +7,10 @@ APlayerCharacter::APlayerCharacter()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Player Camera"));
-	Camera->SetupAttachment(RootComponent);
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("FPV_Player_Camera"));
+	Camera->SetupAttachment(GetMesh(), "head");
+	Camera->SetRelativeLocationAndRotation(FVector(0.0f, -5.0f, 15.1f), FRotator(90.0f, 0.0f, -90.0f));
+	//Camera->SetupAttachment(RootComponent);
 	Camera->bUsePawnControlRotation = true;
 }
 
